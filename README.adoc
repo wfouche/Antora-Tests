@@ -1,0 +1,58 @@
+= Antora Tests
+:toc:
+:sectnums:
+
+== Introduction
+
+https://www.youtube.com/watch?v=LT0a--DNJhI
+
+== Install nvm, node and antora
+
+[souurce,bash]
+----
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+----
+
+[source,bash]
+----
+nvm --version
+----
+
+[source,bash]
+----
+nvm install --lts
+----
+
+[source,bash]
+----
+npx antora -v
+----
+
+
+== Git clone
+
+[source,bash]
+----
+git clone https://gitlab.com/antora/demo/docs-site.git && cd "$(basename $_ .git)"
+
+----
+
+== Run with npx
+[source,bash]
+----
+npx antora --fetch antora-playbook.yml
+----
+
+== Run with Docker
+
+[source,bash]
+----
+docker run -u $(id -u) -v $PWD:/antora:Z --rm -t antora/antora antora-playbook.yml
+----
+
+== Display with Firefox
+
+[source,bash]
+----
+firefox build/site/index.html
+----
