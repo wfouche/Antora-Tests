@@ -10,7 +10,7 @@ https://www.youtube.com/watch?v=LT0a--DNJhI
 
 [souurce,bash]
 ----
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 ----
 
 [source,bash]
@@ -33,17 +33,21 @@ npx antora -v
 
 [source,bash]
 ----
+mkdir temp
+cd  temp
 git clone https://gitlab.com/antora/demo/docs-site.git && cd "$(basename $_ .git)"
 
 ----
 
-== Run with npx
+== Run antora
+
+=== Run with npx
 [source,bash]
 ----
 npx antora --fetch antora-playbook.yml
 ----
 
-== Run with Docker
+=== Run with Docker
 
 [source,bash]
 ----
